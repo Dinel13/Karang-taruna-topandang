@@ -1,25 +1,27 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Home from "./components/Home";
+import { makeStyles } from "@material-ui/core/styles";
+import { CssBaseline } from "@material-ui/core";
+
+import Header from "./components/Header";
+
+const useStyes = makeStyles((theme) => ({
+  root: {
+    minHeight: "100vh",
+    backgroundImage: `url(${process.env.PUBLIC_URL + "/assets/bg.jpg"})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+  },
+}));
 
 function App() {
-  const [openDrawer, setOpenDrawer] = React.useState(false);
-
-  const toggleDrawer = (open) => (event) => {
-    if (
-      event &&
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
-    ) {
-      return;
-    }
-    setOpenDrawer(open);
-  };
+  const classes = useStyes();
 
   return (
     <>
-      <Navbar toggleDrawer={toggleDrawer} openDrawer={openDrawer} />
-      <Home toggleDrawer={toggleDrawer} />
+      <div className={classes.root}>
+        <CssBaseline />
+        <Header />
+      </div>
     </>
   );
 }
