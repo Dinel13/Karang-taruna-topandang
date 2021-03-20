@@ -22,6 +22,6 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
         script: |
           cd /var/www/Karang-taruna-topandang
-          npm install 
+          npm install  
           git pull origin main
           npm run build
