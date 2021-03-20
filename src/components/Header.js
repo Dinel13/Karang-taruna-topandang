@@ -1,8 +1,9 @@
 import React from "react";
 import SortIcon from "@material-ui/icons/Sort";
 import { makeStyles } from "@material-ui/core/styles";
-import { AppBar, IconButton, Toolbar , Collapse} from "@material-ui/core";
+import { AppBar, IconButton, Toolbar, Collapse } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { Link as Scroll } from "react-scroll";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -52,7 +53,7 @@ export default function Header() {
   }, []);
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="header">
       {/* elevation = box shadow */}
       <AppBar className={classes.appbar} elevation={0}>
         <Toolbar className={classes.appbarWrapper}>
@@ -74,7 +75,11 @@ export default function Header() {
             Selamat Datang <br />
             di <span className={classes.colorText}>Katatop</span>.
           </h1>
-          <ExpandMoreIcon className={classes.moreIcon} />
+          <Scroll to="place-to-visit" smooth={true}>
+            <IconButton>
+              <ExpandMoreIcon className={classes.moreIcon} />
+            </IconButton>
+          </Scroll>
         </div>
       </Collapse>
     </div>
