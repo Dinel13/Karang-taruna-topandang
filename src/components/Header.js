@@ -35,9 +35,15 @@ const useStyles = makeStyles((theme) => ({
   title: {
     color: "#fff",
     fontSize: "4.5rem",
+    marginBottom : 0
   },
   colorText: {
     color: "#5AFF3D",
+  },
+  titleDesc: {
+    marginTop: 0,
+    fontSize: "1.1rem",
+    color: "#ded",
   },
   moreIcon: {
     color: "#5AFF3D",
@@ -58,7 +64,7 @@ export default function Header() {
       <AppBar className={classes.appbar} elevation={0}>
         <Toolbar className={classes.appbarWrapper}>
           <h1 className={classes.appbarTitle}>
-            Kata<span className={classes.colorText}>Top</span>
+            Bukit <span className={classes.colorText}>Sutra</span>
           </h1>
           <IconButton>
             <SortIcon className={classes.icon} />
@@ -73,8 +79,11 @@ export default function Header() {
         <div className={classes.container}>
           <h1 className={classes.title}>
             Selamat Datang <br />
-            di <span className={classes.colorText}>Katatop</span>.
+            di <span className={classes.colorText}>Bukit Sutra</span>.
           </h1>
+          <h5 className={classes.titleDesc}>
+            Tempat di mana kedamaian dan keindahan bersatu.
+          </h5>
           <Scroll to="place-to-visit" smooth={true}>
             <IconButton>
               <ExpandMoreIcon className={classes.moreIcon} />
