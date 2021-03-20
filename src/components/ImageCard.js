@@ -69,8 +69,8 @@ export default function ImageCard({ place , checked}) {
           <Button size="small" color="primary">
             Share
           </Button>
-          <Button size="small" color="primary">
-            Learn More
+          <Button size="small" color="secondary" variant="contained">
+            Selengkapnya ...
           </Button>
         </CardActions>
       </Card>
